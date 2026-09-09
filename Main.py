@@ -22,6 +22,9 @@ service= input("Enter the service to attack (e.g., SSH, FTP): ")
 port:int = int(input("Enter the port number: "))
 username:str = str(input("Enter the username: "))
 
+#Phase 3: Active network checking
+
+
 #Final output of the brute-force attack estimation
 print(f"Target IP: {target_ip}")
 print(f"Service: {service}")
