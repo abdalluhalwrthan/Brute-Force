@@ -1,5 +1,8 @@
 # Brute-force attack estimation Phase 1
 #Baseline assumptions
+import ipaddress
+
+
 password_length = 8
 charset = 26
 speed = 10
@@ -14,11 +17,10 @@ worth_it = hours <= max_hours
 
 #Brute-force attack estimation Phase 2 (Define the target)
 #Known target Information
-
-target_ip = "192.168.40.132"
-service= "telnet"
-port = 23
-username = "msfadmin"
+target_ip = input("Enter the target IP address: ")
+service= input("Enter the service to attack (e.g., SSH, FTP): ")
+port:int = int(input("Enter the port number: "))
+username:str = str(input("Enter the username: "))
 
 #Final output of the brute-force attack estimation
 print(f"Target IP: {target_ip}")
