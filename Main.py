@@ -1,24 +1,31 @@
 # Brute-force attack estimation Phase 1
+#Baseline assumptions
 password_length = 8
-
 charset = 26
-
-speed = 500000
-
+speed = 10
 max_hours = 24
 
+# Calculate the number of combinations and time needed
+
 combinations = charset ** password_length
-
 seconds = combinations / speed
-
 hours = seconds / 3600
-
 worth_it = hours <= max_hours
 
-print(f"Number of combinations: {combinations}")
-print(f"Seconds needed: {seconds:.2f}")
-print(f"Hours needed: {hours:.2f}")
+#Brute-force attack estimation Phase 2 (Define the target)
+#Known target Information
+
+target_ip = "192.168.40.132"
+service= "telnet"
+port = 23
+username = "msfadmin"
+
+#Final output of the brute-force attack estimation
+print(f"Target IP: {target_ip}")
+print(f"Service: {service}")
+print(f"Port: {port}")  
+print(f"Username: {username}")
+print(f"combinations: {combinations}")
+print(f"Hours needed: {hours:.2f}") 
+
 print(f"Is it worth it? {'Yes' if worth_it else 'No'}")
-
-#Brute-force attack estimation Phase 2 (Dfine the target)
-
