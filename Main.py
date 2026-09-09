@@ -1,12 +1,13 @@
 # Brute-force attack estimation Phase 1
 #Baseline assumptions
 import ipaddress
+import socket
 
 
 password_length = 8
 charset = 26
-speed = 10
-max_hours = 24
+speed = 30
+max_hours = 72
 
 # Calculate the number of combinations and time needed
 
@@ -23,7 +24,18 @@ port:int = int(input("Enter the port number: "))
 username:str = str(input("Enter the username: "))
 
 #Phase 3: Active network checking
+print(f"[*] Testing connection to {target_ip}:{port} ...")
 
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.settimeout(3.0)
+
+result = s.connect_ex((target_ip, port))
+s.close()
+
+if result == 0:
+    print("[+] SUCCESS: Port is OPEN and target is reachable!")
+else:
+    print("[-] FAILED: Target unreachable or port is closed.")
 
 #Final output of the brute-force attack estimation
 print(f"Target IP: {target_ip}")
