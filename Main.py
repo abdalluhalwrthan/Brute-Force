@@ -3,7 +3,6 @@ import socket
 
 target_ip = input("Enter the target IP address: ")
 port = int(input("Enter the port number: "))
-username = input("Enter the username: ")    
 
 #2. Active Network Check
 print(f"[*] Testting connection to {target_ip}:{port}...")
@@ -48,7 +47,6 @@ worth_it = hours <= max_hours
 #5 Output
 print("\n--- Feasbility Report ---")
 print(f"Target: {target_ip}:{port}")
-print(f"Usrename: {username}")
 print(f"Mode: {attack_type }")
 print(f"Total Tries: {compinations}")
 print(f"Hours needed: {hours:.2f} hrs ({hours/24:.2f} days)")
